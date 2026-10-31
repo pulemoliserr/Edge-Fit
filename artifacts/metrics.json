@@ -1,0 +1,941 @@
+{
+  "generated_utc": "2026-10-31 20:19 UTC",
+  "dataset": {
+    "name": "UCI Human Activity Recognition Using Smartphones",
+    "doi": "10.24432/C54S4K",
+    "windows": 10299,
+    "features": 561,
+    "subjects": 30,
+    "train_windows": 8013,
+    "test_windows": 2286,
+    "test_subjects": [
+      25,
+      26,
+      27,
+      28,
+      29,
+      30
+    ],
+    "window_seconds": 2.56,
+    "overlap": 0.5,
+    "sampling_hz": 50,
+    "class_counts": {
+      "WALKING": 1722,
+      "WALKING_UPSTAIRS": 1544,
+      "WALKING_DOWNSTAIRS": 1406,
+      "SITTING": 1777,
+      "STANDING": 1906,
+      "LAYING": 1944
+    }
+  },
+  "activities": [
+    "WALKING",
+    "WALKING_UPSTAIRS",
+    "WALKING_DOWNSTAIRS",
+    "SITTING",
+    "STANDING",
+    "LAYING"
+  ],
+  "edge_k": 25,
+  "top_features": [
+    {
+      "feature": "tGravityAcc_mean_X",
+      "importance": 0.03143024500241325
+    },
+    {
+      "feature": "angle_X_gravityMean",
+      "importance": 0.031174718400919652
+    },
+    {
+      "feature": "tGravityAcc_min_X",
+      "importance": 0.03045553677288746
+    },
+    {
+      "feature": "tGravityAcc_energy_X",
+      "importance": 0.027882589571199327
+    },
+    {
+      "feature": "tGravityAcc_mean_Y",
+      "importance": 0.026125122696782237
+    },
+    {
+      "feature": "tGravityAcc_max_Y",
+      "importance": 0.02320402967199631
+    },
+    {
+      "feature": "tGravityAcc_min_Y",
+      "importance": 0.021302764403735023
+    },
+    {
+      "feature": "tGravityAcc_max_X",
+      "importance": 0.02030816956471305
+    },
+    {
+      "feature": "angle_Y_gravityMean",
+      "importance": 0.018555106510087082
+    },
+    {
+      "feature": "tGravityAcc_energy_Y",
+      "importance": 0.012919205466582312
+    },
+    {
+      "feature": "fBodyAccJerk_bandsEnergy_1_16",
+      "importance": 0.0111764874822207
+    },
+    {
+      "feature": "tBodyAccMag_std",
+      "importance": 0.010566399604333821
+    },
+    {
+      "feature": "tGravityAcc_arCoeff_Y_2",
+      "importance": 0.010004932284038212
+    },
+    {
+      "feature": "tBodyAccJerk_std_X",
+      "importance": 0.009650978521731253
+    },
+    {
+      "feature": "tGravityAcc_min_Z",
+      "importance": 0.009120851615489303
+    },
+    {
+      "feature": "fBodyAccJerk_bandsEnergy_1_24",
+      "importance": 0.00904730170744533
+    },
+    {
+      "feature": "fBodyAccJerk_max_X",
+      "importance": 0.008902669999801332
+    },
+    {
+      "feature": "tGravityAcc_arCoeff_X_1",
+      "importance": 0.008888367394775614
+    },
+    {
+      "feature": "angle_Z_gravityMean",
+      "importance": 0.008626407181159965
+    },
+    {
+      "feature": "fBodyAccMag_std",
+      "importance": 0.008494820598804085
+    },
+    {
+      "feature": "fBodyAccMag_mean",
+      "importance": 0.008116404338843594
+    },
+    {
+      "feature": "tBodyAccJerkMag_mad",
+      "importance": 0.008070434607922892
+    },
+    {
+      "feature": "tGravityAcc_entropy_Y",
+      "importance": 0.008041066856925785
+    },
+    {
+      "feature": "tGravityAcc_arCoeff_Y_3",
+      "importance": 0.00800205827674882
+    },
+    {
+      "feature": "tGravityAcc_max_Z",
+      "importance": 0.007692186300229783
+    }
+  ],
+  "top_k_indices": [
+    40,
+    558,
+    52,
+    56,
+    41,
+    50,
+    53,
+    49,
+    559,
+    57,
+    389,
+    201,
+    70,
+    83,
+    54,
+    393,
+    353,
+    65,
+    560,
+    503,
+    502,
+    228,
+    63,
+    71,
+    51
+  ],
+  "results": [
+    {
+      "model": "Logistic Regression",
+      "family": "Logistic Regression",
+      "features": 561,
+      "test_macro_f1": 0.9657070528287108,
+      "test_accuracy": 0.9641294838145232,
+      "train_time_s": 1.5336592197418213,
+      "size_mb": 0.024578094482421875,
+      "latency_single_ms": 0.29393,
+      "latency_batch1000_ms": 1.6214279999999999
+    },
+    {
+      "model": "Logistic Regression (top 25)",
+      "family": "Logistic Regression",
+      "features": 25,
+      "test_macro_f1": 0.8973349949998455,
+      "test_accuracy": 0.8993875765529309,
+      "train_time_s": 0.18284130096435547,
+      "size_mb": 0.001964569091796875,
+      "latency_single_ms": 0.28602700000000003,
+      "latency_batch1000_ms": 0.376761
+    },
+    {
+      "model": "LightGBM",
+      "family": "LightGBM",
+      "features": 561,
+      "test_macro_f1": 0.9426997716463906,
+      "test_accuracy": 0.9413823272090989,
+      "train_time_s": 77.72479844093323,
+      "size_mb": 1.7359752655029297,
+      "latency_single_ms": 0.946219,
+      "latency_batch1000_ms": 96.7039015
+    },
+    {
+      "model": "LightGBM (top 25)",
+      "family": "LightGBM",
+      "features": 25,
+      "test_macro_f1": 0.8830220840764106,
+      "test_accuracy": 0.8810148731408574,
+      "train_time_s": 4.054103851318359,
+      "size_mb": 2.2654123306274414,
+      "latency_single_ms": 0.990309,
+      "latency_batch1000_ms": 116.2797195
+    },
+    {
+      "model": "Random Forest",
+      "family": "Random Forest",
+      "features": 561,
+      "test_macro_f1": 0.9270412412343153,
+      "test_accuracy": 0.9282589676290464,
+      "train_time_s": 17.887961387634277,
+      "size_mb": 4.130342483520508,
+      "latency_single_ms": 56.094915,
+      "latency_batch1000_ms": 74.7102675
+    },
+    {
+      "model": "Random Forest (top 25)",
+      "family": "Random Forest",
+      "features": 25,
+      "test_macro_f1": 0.8783545813781989,
+      "test_accuracy": 0.878827646544182,
+      "train_time_s": 3.2215452194213867,
+      "size_mb": 3.706740379333496,
+      "latency_single_ms": 55.604459500000004,
+      "latency_batch1000_ms": 75.0924845
+    }
+  ],
+  "lr_grouped_cv": {
+    "mean": 0.9417088770796868,
+    "std": 0.014361342983511244,
+    "folds": 4
+  },
+  "feature_curve": [
+    {
+      "features": 5,
+      "cv_macro_f1_mean": 0.5602615314838483,
+      "cv_macro_f1_std": 0.029588566109057773
+    },
+    {
+      "features": 10,
+      "cv_macro_f1_mean": 0.612352086922225,
+      "cv_macro_f1_std": 0.030417081583499102
+    },
+    {
+      "features": 15,
+      "cv_macro_f1_mean": 0.8651655881874772,
+      "cv_macro_f1_std": 0.02050976188596682
+    },
+    {
+      "features": 25,
+      "cv_macro_f1_mean": 0.882974826345416,
+      "cv_macro_f1_std": 0.013554889019771942
+    },
+    {
+      "features": 50,
+      "cv_macro_f1_mean": 0.8932204929726956,
+      "cv_macro_f1_std": 0.011449423132493718
+    },
+    {
+      "features": 100,
+      "cv_macro_f1_mean": 0.913305341141754,
+      "cv_macro_f1_std": 0.020343148878560924
+    },
+    {
+      "features": 200,
+      "cv_macro_f1_mean": 0.9343817156991036,
+      "cv_macro_f1_std": 0.01843255604515949
+    },
+    {
+      "features": 561,
+      "cv_macro_f1_mean": 0.9408451724949268,
+      "cv_macro_f1_std": 0.015103674574834238
+    }
+  ],
+  "native_lr_latency_us": 5.396,
+  "lr_ops_per_window": 7854,
+  "confusion": {
+    "Logistic Regression": [
+      [
+        360,
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        333,
+        0,
+        0,
+        3,
+        0
+      ],
+      [
+        2,
+        11,
+        295,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        388,
+        19,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        39,
+        392,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        6,
+        0,
+        436
+      ]
+    ],
+    "Logistic Regression (top 25)": [
+      [
+        339,
+        1,
+        14,
+        0,
+        8,
+        0
+      ],
+      [
+        5,
+        260,
+        47,
+        0,
+        24,
+        0
+      ],
+      [
+        0,
+        18,
+        290,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        369,
+        38,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        75,
+        356,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        442
+      ]
+    ],
+    "LightGBM": [
+      [
+        359,
+        2,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        334,
+        1,
+        0,
+        1,
+        0
+      ],
+      [
+        1,
+        29,
+        278,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        369,
+        38,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        61,
+        370,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        442
+      ]
+    ],
+    "LightGBM (top 25)": [
+      [
+        334,
+        6,
+        22,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        290,
+        22,
+        0,
+        20,
+        0
+      ],
+      [
+        6,
+        17,
+        285,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        340,
+        67,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        108,
+        323,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        442
+      ]
+    ],
+    "Random Forest": [
+      [
+        355,
+        7,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        318,
+        1,
+        1,
+        16,
+        0
+      ],
+      [
+        0,
+        53,
+        255,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        371,
+        36,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        50,
+        381,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        442
+      ]
+    ],
+    "Random Forest (top 25)": [
+      [
+        352,
+        4,
+        6,
+        0,
+        0,
+        0
+      ],
+      [
+        9,
+        273,
+        31,
+        1,
+        22,
+        0
+      ],
+      [
+        8,
+        33,
+        267,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        340,
+        67,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        96,
+        335,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        442
+      ]
+    ]
+  },
+  "reports": {
+    "Logistic Regression": {
+      "WALKING": {
+        "precision": 0.994475138121547,
+        "recall": 0.994475138121547,
+        "f1-score": 0.994475138121547,
+        "support": 362.0
+      },
+      "WALKING_UPSTAIRS": {
+        "precision": 0.9624277456647399,
+        "recall": 0.9910714285714286,
+        "f1-score": 0.9765395894428153,
+        "support": 336.0
+      },
+      "WALKING_DOWNSTAIRS": {
+        "precision": 1.0,
+        "recall": 0.9577922077922078,
+        "f1-score": 0.978441127694859,
+        "support": 308.0
+      },
+      "SITTING": {
+        "precision": 0.8960739030023095,
+        "recall": 0.9533169533169533,
+        "f1-score": 0.9238095238095239,
+        "support": 407.0
+      },
+      "STANDING": {
+        "precision": 0.9468599033816425,
+        "recall": 0.9095127610208816,
+        "f1-score": 0.927810650887574,
+        "support": 431.0
+      },
+      "LAYING": {
+        "precision": 1.0,
+        "recall": 0.9864253393665159,
+        "f1-score": 0.9931662870159453,
+        "support": 442.0
+      },
+      "accuracy": 0.9641294838145232,
+      "macro avg": {
+        "precision": 0.9666394483617063,
+        "recall": 0.9654323046982557,
+        "f1-score": 0.9657070528287108,
+        "support": 2286.0
+      },
+      "weighted avg": {
+        "precision": 0.9650806734132897,
+        "recall": 0.9641294838145232,
+        "f1-score": 0.9642753871246155,
+        "support": 2286.0
+      }
+    },
+    "Logistic Regression (top 25)": {
+      "WALKING": {
+        "precision": 0.9854651162790697,
+        "recall": 0.93646408839779,
+        "f1-score": 0.9603399433427762,
+        "support": 362.0
+      },
+      "WALKING_UPSTAIRS": {
+        "precision": 0.931899641577061,
+        "recall": 0.7738095238095238,
+        "f1-score": 0.8455284552845529,
+        "support": 336.0
+      },
+      "WALKING_DOWNSTAIRS": {
+        "precision": 0.8262108262108262,
+        "recall": 0.9415584415584416,
+        "f1-score": 0.8801213960546282,
+        "support": 308.0
+      },
+      "SITTING": {
+        "precision": 0.831081081081081,
+        "recall": 0.9066339066339066,
+        "f1-score": 0.8672150411280846,
+        "support": 407.0
+      },
+      "STANDING": {
+        "precision": 0.8356807511737089,
+        "recall": 0.8259860788863109,
+        "f1-score": 0.8308051341890315,
+        "support": 431.0
+      },
+      "LAYING": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 442.0
+      },
+      "accuracy": 0.8993875765529309,
+      "macro avg": {
+        "precision": 0.9017229027202912,
+        "recall": 0.8974086732143288,
+        "f1-score": 0.8973349949998455,
+        "support": 2286.0
+      },
+      "weighted avg": {
+        "precision": 0.9032187182378473,
+        "recall": 0.8993875765529309,
+        "f1-score": 0.8993226356190391,
+        "support": 2286.0
+      }
+    },
+    "LightGBM": {
+      "WALKING": {
+        "precision": 0.9972222222222222,
+        "recall": 0.9917127071823204,
+        "f1-score": 0.9944598337950139,
+        "support": 362.0
+      },
+      "WALKING_UPSTAIRS": {
+        "precision": 0.915068493150685,
+        "recall": 0.9940476190476191,
+        "f1-score": 0.9529243937232525,
+        "support": 336.0
+      },
+      "WALKING_DOWNSTAIRS": {
+        "precision": 0.996415770609319,
+        "recall": 0.9025974025974026,
+        "f1-score": 0.9471890971039182,
+        "support": 308.0
+      },
+      "SITTING": {
+        "precision": 0.858139534883721,
+        "recall": 0.9066339066339066,
+        "f1-score": 0.8817204301075269,
+        "support": 407.0
+      },
+      "STANDING": {
+        "precision": 0.9024390243902439,
+        "recall": 0.8584686774941995,
+        "f1-score": 0.8799048751486326,
+        "support": 431.0
+      },
+      "LAYING": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 442.0
+      },
+      "accuracy": 0.9413823272090989,
+      "macro avg": {
+        "precision": 0.9448808408760319,
+        "recall": 0.9422433854925747,
+        "f1-score": 0.9426997716463906,
+        "support": 2286.0
+      },
+      "weighted avg": {
+        "precision": 0.9429429246284403,
+        "recall": 0.9413823272090989,
+        "f1-score": 0.9413869266297632,
+        "support": 2286.0
+      }
+    },
+    "LightGBM (top 25)": {
+      "WALKING": {
+        "precision": 0.9709302325581395,
+        "recall": 0.9226519337016574,
+        "f1-score": 0.9461756373937678,
+        "support": 362.0
+      },
+      "WALKING_UPSTAIRS": {
+        "precision": 0.9265175718849841,
+        "recall": 0.8630952380952381,
+        "f1-score": 0.8936825885978429,
+        "support": 336.0
+      },
+      "WALKING_DOWNSTAIRS": {
+        "precision": 0.8662613981762918,
+        "recall": 0.9253246753246753,
+        "f1-score": 0.8948194662480377,
+        "support": 308.0
+      },
+      "SITTING": {
+        "precision": 0.7589285714285714,
+        "recall": 0.8353808353808354,
+        "f1-score": 0.7953216374269005,
+        "support": 407.0
+      },
+      "STANDING": {
+        "precision": 0.7878048780487805,
+        "recall": 0.7494199535962877,
+        "f1-score": 0.7681331747919143,
+        "support": 431.0
+      },
+      "LAYING": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 442.0
+      },
+      "accuracy": 0.8810148731408574,
+      "macro avg": {
+        "precision": 0.8850737753494613,
+        "recall": 0.8826454393497823,
+        "f1-score": 0.8830220840764106,
+        "support": 2286.0
+      },
+      "weighted avg": {
+        "precision": 0.8836496019195765,
+        "recall": 0.8810148731408574,
+        "f1-score": 0.8815217107952223,
+        "support": 2286.0
+      }
+    },
+    "Random Forest": {
+      "WALKING": {
+        "precision": 1.0,
+        "recall": 0.9806629834254144,
+        "f1-score": 0.9902370990237099,
+        "support": 362.0
+      },
+      "WALKING_UPSTAIRS": {
+        "precision": 0.8412698412698413,
+        "recall": 0.9464285714285714,
+        "f1-score": 0.8907563025210085,
+        "support": 336.0
+      },
+      "WALKING_DOWNSTAIRS": {
+        "precision": 0.99609375,
+        "recall": 0.827922077922078,
+        "f1-score": 0.9042553191489362,
+        "support": 308.0
+      },
+      "SITTING": {
+        "precision": 0.8791469194312796,
+        "recall": 0.9115479115479116,
+        "f1-score": 0.8950542822677925,
+        "support": 407.0
+      },
+      "STANDING": {
+        "precision": 0.8799076212471132,
+        "recall": 0.8839907192575406,
+        "f1-score": 0.8819444444444444,
+        "support": 431.0
+      },
+      "LAYING": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 442.0
+      },
+      "accuracy": 0.9282589676290464,
+      "macro avg": {
+        "precision": 0.9327363553247058,
+        "recall": 0.9250920439302526,
+        "f1-score": 0.9270412412343153,
+        "support": 2286.0
+      },
+      "weighted avg": {
+        "precision": 0.9319844805917338,
+        "recall": 0.9282589676290464,
+        "f1-score": 0.9285545644051011,
+        "support": 2286.0
+      }
+    },
+    "Random Forest (top 25)": {
+      "WALKING": {
+        "precision": 0.9539295392953929,
+        "recall": 0.9723756906077348,
+        "f1-score": 0.9630642954856361,
+        "support": 362.0
+      },
+      "WALKING_UPSTAIRS": {
+        "precision": 0.8806451612903226,
+        "recall": 0.8125,
+        "f1-score": 0.8452012383900929,
+        "support": 336.0
+      },
+      "WALKING_DOWNSTAIRS": {
+        "precision": 0.8782894736842105,
+        "recall": 0.8668831168831169,
+        "f1-score": 0.8725490196078431,
+        "support": 308.0
+      },
+      "SITTING": {
+        "precision": 0.7780320366132724,
+        "recall": 0.8353808353808354,
+        "f1-score": 0.8056872037914692,
+        "support": 407.0
+      },
+      "STANDING": {
+        "precision": 0.7900943396226415,
+        "recall": 0.777262180974478,
+        "f1-score": 0.783625730994152,
+        "support": 431.0
+      },
+      "LAYING": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 442.0
+      },
+      "accuracy": 0.878827646544182,
+      "macro avg": {
+        "precision": 0.8801650917509733,
+        "recall": 0.8774003039743609,
+        "f1-score": 0.8783545813781989,
+        "support": 2286.0
+      },
+      "weighted avg": {
+        "precision": 0.8796684709502091,
+        "recall": 0.878827646544182,
+        "f1-score": 0.8788361203436984,
+        "support": 2286.0
+      }
+    }
+  },
+  "per_subject": [
+    {
+      "subject": 25,
+      "windows": 409,
+      "accuracy": 0.9193154034229829,
+      "macro_f1": 0.9169372663937353
+    },
+    {
+      "subject": 26,
+      "windows": 392,
+      "accuracy": 0.9821428571428571,
+      "macro_f1": 0.984568304108834
+    },
+    {
+      "subject": 27,
+      "windows": 376,
+      "accuracy": 0.9813829787234043,
+      "macro_f1": 0.9844382197323375
+    },
+    {
+      "subject": 28,
+      "windows": 382,
+      "accuracy": 0.9476439790575916,
+      "macro_f1": 0.9536001391625062
+    },
+    {
+      "subject": 29,
+      "windows": 344,
+      "accuracy": 0.9622093023255814,
+      "macro_f1": 0.9651907546644388
+    },
+    {
+      "subject": 30,
+      "windows": 383,
+      "accuracy": 0.9947780678851175,
+      "macro_f1": 0.9945498182455218
+    }
+  ],
+  "environment": {
+    "platform": "Linux-6.18.44-fc-v185-x86_64-with-glibc2.39",
+    "processor": "x86_64",
+    "python": "3.13.16",
+    "scikit_learn": "1.9.1",
+    "lightgbm": "4.7.0"
+  }
+}

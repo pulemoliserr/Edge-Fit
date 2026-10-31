@@ -1,0 +1,9 @@
+# Pinned to the versions used to train and test the saved models.
+# The joblib model files must be loaded with the same scikit-learn / LightGBM versions.
+streamlit==1.66.1
+scikit-learn==1.9.1
+lightgbm==4.7.0
+numpy==2.5.3
+pandas==3.0.5
+plotly==7.1.0
+joblib==1.6.0
